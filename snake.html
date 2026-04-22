@@ -460,6 +460,10 @@
                 display: flex;
             }
             
+            .desktop-toggle {
+                display: none;
+            }
+            
             .title {
                 font-size: clamp(1.2rem, 6vw, 2rem);
             }
@@ -577,6 +581,11 @@
                 <span class="key">SPACE</span>
                 <span>Pausa</span>
             </div>
+            <label class="toggle-label desktop-toggle">
+                <input type="checkbox" id="wrapToggleDesktop" checked>
+                <span class="toggle-switch"></span>
+                <span class="toggle-text">Wrap muri</span>
+            </label>
         </div>
         
         <div class="mobile-controls">
@@ -824,6 +833,10 @@
         document.getElementById('pauseMobileBtn').addEventListener('click', togglePause);
 
         document.getElementById('wrapToggle').addEventListener('change', (e) => {
+            wrapEnabled = e.target.checked;
+        });
+
+        document.getElementById('wrapToggleDesktop').addEventListener('change', (e) => {
             wrapEnabled = e.target.checked;
         });
 
